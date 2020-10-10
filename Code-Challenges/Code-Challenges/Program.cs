@@ -7,7 +7,7 @@ namespace Code_Challenges
         private static void Main(string[] args)
         {
             var EightKyu = new EightKyu();
-            Console.WriteLine(EightKyu.sayMeOperations("9 4 5 20 25"));
+            Console.WriteLine(EightKyu.LongestVowel("zyimtgtdtnvqcewvhkmnvke"));
             Console.ReadLine();
         }
     }

@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Code_Challenges
 {
@@ -68,6 +70,62 @@ namespace Code_Challenges
             result = result.TrimEnd(',', ' ');
 
             return result;
+        }
+
+        public int LongestVowel(string str)
+        {
+            //https://www.codewars.com/kata/59c5f4e9d751df43cf000035/train/csharp
+            //The vowel substrings in the word codewarriors are o,e,a,io.The longest of these has a length of 2.Given a lowercase string that has alphabetic characters only(both vowels and consonants) and no spaces, return the length of the longest vowel substring. Vowels are any of aeiou.
+
+            //Documentation:
+            //Kata.Solve Method(String)
+            //Returns the length of the greatest continuous vowel substring in a string.
+
+            //Syntax
+
+            //public static int Solve(
+            //string str
+            //)
+            //Parameters
+            //str
+            //Type: System.String
+            //The string to be processed.
+
+            //Return Value
+            //Type: System.Int32
+            //The length of the greatest continuous vowel substring in str, or 0 if str contains no vowels.
+
+            //Exceptions
+            //Exception   Condition
+            //ArgumentNullException   str is null.
+
+            //Good luck!
+            var max = 0;
+            var current = 0;
+            var vowels = new HashSet<char> { 'a', 'e', 'i', 'o', 'u' };
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (vowels.Contains(str[i]))
+                {
+                    current += 1;
+                    if (current > max)
+                    {
+                        max = current;
+                    }
+                }
+                else
+                {
+                    current = 0;
+                }
+            }
+
+            return max;
+
+            //better solution
+            //char[] chrs = new char[] { 'a', 'e', 'u', 'i', 'o' };
+            //var split = str.Split(str.Where(c => !chrs.Contains(c)).ToArray());
+            //return split.Max(s => s.Length);
         }
     }
 }
