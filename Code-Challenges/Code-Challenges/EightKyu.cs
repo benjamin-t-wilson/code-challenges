@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace Code_Challenges
@@ -126,6 +125,35 @@ namespace Code_Challenges
             //char[] chrs = new char[] { 'a', 'e', 'u', 'i', 'o' };
             //var split = str.Split(str.Where(c => !chrs.Contains(c)).ToArray());
             //return split.Max(s => s.Length);
+        }
+
+        public static int[][] MatrixAddition(int[][] a, int[][] b)
+        {
+            //https://www.codewars.com/kata/526233aefd4764272800036f/train/csharp
+            //Write a function that accepts two square matrices(N x N two dimensional arrays), and return the sum of the two. Both matrices being passed into the function will be of size N x N(square), containing only integers.
+
+            //How to sum two matrices:
+
+            //Take each cell[n][m] from the first matrix, and add it with the same[n][m] cell from the second matrix.This will be cell[n][m] of the solution matrix.
+
+            //Visualization:
+
+            //| 1 2 3 |     | 2 2 1 |     | 1 + 2 2 + 2 3 + 1 |     | 3 4 4 |
+            //| 3 2 1 |  +  | 3 2 3 |  =  | 3 + 3 2 + 2 1 + 3 |  =  | 6 4 4 |
+            //| 1 1 1 |     | 1 1 3 |     | 1 + 1 1 + 1 1 + 3 |     | 2 2 4 |
+            //TODO
+            var size = a.Length;
+            var c = new int[size][];
+            c = b;
+            for (int x = 0; x < size; x++)
+            {
+                for (int y = 0; y < size; y++)
+                {
+                    c[x][y] = a[x][y] + b[x][y];
+                }
+            }
+
+            return c;
         }
     }
 }
