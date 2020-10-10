@@ -42,10 +42,32 @@ namespace Code_Challenges
             //9 - 4 = 5-- > subtraction
             //4 * 5 = 20-- > multiplication
             //5 + 20 = 25-- > addition
+            var result = "";
+            var list = stringNumbers.Split(' ');
 
+            for (int i = 1; i < list.Length - 1; i++)
+            {
+                if (int.Parse(list[i - 1]) + int.Parse(list[i]) == int.Parse(list[i + 1]))
+                {
+                    result += "addition, ";
+                }
+                else if (int.Parse(list[i - 1]) - int.Parse(list[i]) == int.Parse(list[i + 1]))
+                {
+                    result += "subtraction, ";
+                }
+                else if (int.Parse(list[i - 1]) * int.Parse(list[i]) == int.Parse(list[i + 1]))
+                {
+                    result += "multiplication, ";
+                }
+                else
+                {
+                    result += "division, ";
+                }
+            }
 
-            // :) ...
-            return "";
+            result = result.TrimEnd(',', ' ');
+
+            return result;
         }
     }
 }

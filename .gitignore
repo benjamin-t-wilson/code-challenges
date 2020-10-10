@@ -129,3 +129,6 @@ dmypy.json
 .pyre/
 
 .vs
+Code-Challenges/Code-Challenges/bin
+Code-Challenges/Code-Challenges/debug
+Code-Challenges/Code-Challenges/obj
