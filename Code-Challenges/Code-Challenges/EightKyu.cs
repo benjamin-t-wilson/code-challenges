@@ -155,5 +155,15 @@ namespace Code_Challenges
 
             return c;
         }
+
+        public int DoubleInteger(int n)
+        {
+            //https://www.codewars.com/kata/53ee5429ba190077850011d4/train/csharp
+            //    Code as fast as you can! You need to double the integer and return it.
+
+            //Double the input!
+
+            return n * 2;
+        }
     }
 }
